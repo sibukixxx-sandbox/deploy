@@ -9,7 +9,8 @@ server('conoha', '157.7.236.208', 20022)
     ->stage('conoha')
     ->env('deploy_path', '/home/sibukixxx/umjhome');
 
-set('repository', 'https://github.com/sibukixxx/laravel5-template');
+#set('repository', 'https://github.com/sibukixxx/Laravel5.SampleApplication');
+set('repository', 'git@github.com:MarketingApplications/tracking-management.git');
 #set('repository', 'https://github.com/laravel/laravel');
 
 
@@ -48,7 +49,7 @@ task('deploy:optimize', function () {
 
 
 /**
- * Main task
+ * Main task list
  */
 task('deploy', [
     'deploy:prepare',
