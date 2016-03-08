@@ -9,10 +9,7 @@ server('conoha', '157.7.236.208', 20022)
     ->stage('conoha')
     ->env('deploy_path', '/home/sibukixxx/umjhome');
 
-#set('repository', 'https://github.com/sibukixxx/Laravel5.SampleApplication');
-set('repository', 'git@github.com:MarketingApplications/tracking-management.git');
-#set('repository', 'https://github.com/laravel/laravel');
-
+set('repository', 'https://github.com/sibukixxx/laravel5.2');
 
 
 
@@ -45,6 +42,8 @@ task('deploy:optimize', function () {
     run('php {{release_path}}/' . 'artisan optimize');
 #    run('php {{release_path}}/' . 'artisan route:cache');
     run('php {{release_path}}/' . 'artisan config:cache');
+    run('php {{release_path}}/' . 'artisan view:clear');
+    run('php {{release_path}}/' . 'artisan cache:clear');
 })->desc('Optimize Application');
 
 
